@@ -1,0 +1,28 @@
+"""
+teema 4 funktiot osa 2
+h8
+
+Fibonaccin lukujono
+
+Fibonaccin lukujonon ajatuksena on laskea yhteen kaksi edellistä lukua, ja näin saada seuraavan luvun arvo.
+Fibonaccin lukujonon ensimmäiset yksitoista lukua järjestyksessä ovat 0,1,1,2,3,5,8,13,21,34,55. Joskus on myös
+tapana määritellä Fibonaccin lukujonon alkavan ykkäsestä eikä nollasta.
+
+Tee rekursiivinen toteutus, jossa tulostat luvun N sarjan, kun N kysytään pääohjelmassa käyttäjältä.
+"""
+
+def fibonacci(n):
+    if n == 0:
+        return 0
+    elif n == 1:
+        return 1
+    else:
+        return fibonacci(n -1) + fibonacci(n -2)
+
+luku = int(input("Anna luku, jonka Fibonacci -sarja tulostetaan:"))
+
+kierros = 0
+for i in range(0, luku):
+    kierros += 1
+    print("Round", kierros," ", fibonacci(i), end=" ")
+    #print(fibonacci(i), end="")
